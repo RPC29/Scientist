@@ -14,7 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject coinshield;
     public SpriteRenderer redflash;
     public SpriteRenderer redoverlay;
-
+    public GameObject particles;
+    public GameObject sky;
 
     int coyotetimer;
     int stuntimer;
@@ -102,7 +103,9 @@ public class PlayerMovement : MonoBehaviour
             coinshield.SetActive(true);
             coin.SetActive(true);
         }
-
+        particles.transform.position = cam.transform.position / 2f;
+        particles.transform.position = new Vector3(particles.transform.position.x, particles.transform.position.y, 10);
+        sky.transform.position = new Vector3(cam.transform.position.x / 1.1f, cam.transform.position.y / 1.1f, 10);
     }
 
 

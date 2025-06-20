@@ -27,6 +27,10 @@ public class Angel : MonoBehaviour
     {
         angel.transform.position = new Vector2(angel.transform.position.x, setpos + 0.1f * Mathf.Sin(Time.time * 2));
         if (Time.timeScale == 0) despawned = false;
+
+        if (arrowtimer % 60 < 40) angelsp.sprite = angelsprites[2];
+        else if (arrowtimer % 60 < 50) angelsp.sprite = angelsprites[0];
+        else angelsp.sprite = angelsprites[1];
     }
 
     private void FixedUpdate()

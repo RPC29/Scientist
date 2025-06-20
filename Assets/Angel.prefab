@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 13
   m_Sprite: {fileID: 728565217, guid: 5639cd0ab6e166042a4bef3f0890dcdf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +101,10 @@ MonoBehaviour:
   angel: {fileID: 3286901036500215275}
   arrow: {fileID: 8889093476363519217, guid: f25b5386facf0e34a90d71ce6aa7ff7b, type: 3}
   angelsp: {fileID: 7365338480843660099}
-  angelsprites: []
+  angelsprites:
+  - {fileID: 728565217, guid: 5639cd0ab6e166042a4bef3f0890dcdf, type: 3}
+  - {fileID: -295571971, guid: 5639cd0ab6e166042a4bef3f0890dcdf, type: 3}
+  - {fileID: -1325312382, guid: 5639cd0ab6e166042a4bef3f0890dcdf, type: 3}
   desync: 0
   despawned: 0
 --- !u!61 &-3376392202327829655
