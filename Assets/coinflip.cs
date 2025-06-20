@@ -6,7 +6,7 @@ public class coinflip : MonoBehaviour
 {
     public SpriteRenderer coin;
     public Sprite[] coinsprite;
-    int coincounter = 0;
+    public static int coincounter = 0;
 
     private void OnEnable()
     {
@@ -22,6 +22,7 @@ public class coinflip : MonoBehaviour
         if (coincounter > 38)
         {
             PlayerMovement.coining = false;
+            coincounter = 0;
             coin.gameObject.SetActive(false);
         }
     }

@@ -11,8 +11,10 @@ public class coinshield : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.localPosition = new Vector2(0.4f, -0.2f + 0.7f * Mathf.Sin((Mathf.PI/2f) * coinflip.coincounter/21f));
+        if (coinflip.coincounter > 37)
+            this.gameObject.SetActive(false);
     }
 }
