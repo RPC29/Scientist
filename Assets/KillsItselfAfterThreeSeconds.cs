@@ -12,6 +12,11 @@ public class KillsItselfAfterThreeSeconds : MonoBehaviour
         count = 0;
     }
 
+    private void OnEnable()
+    {
+        count = 0;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -20,7 +25,7 @@ public class KillsItselfAfterThreeSeconds : MonoBehaviour
         if (count > 180)
         {
             if (!gameObject.transform.GetChild(0).gameObject.GetComponent<handofheaven>().angry && !gameObject.transform.GetChild(1).gameObject.GetComponent<handofheaven>().angry)
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

@@ -38,6 +38,7 @@ public class Punchofheaven : MonoBehaviour
             animated = true;
         }
         //sp.sprite = hands[1];
+        if (BoosFight.pause) Destroy(this.gameObject);
     }
 
     private void Update()

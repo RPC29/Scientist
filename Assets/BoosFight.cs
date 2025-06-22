@@ -17,9 +17,10 @@ public class BoosFight : MonoBehaviour
     public GameObject Punch2;
     public GameObject Pepis;
     public Transform[] Spawners;
+    int lasthand;
     int step;
     int phase;
-    bool pause;
+    public static bool pause;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +46,18 @@ public class BoosFight : MonoBehaviour
         }
         if (step == 30 * 60)
         {
-            phase = 2;
+            if (phase == 1) phase = 2; 
+            if (phase == 3) phase = 4; 
+            if (phase == 5) phase = 6; 
             Plat1.SetActive(true);
+        }
+        if (step == 60 * 60)
+        {
+            Plat2.SetActive(true);
+        }
+        if (godseye.hit)
+        {
+            StartCoroutine("pauseabit");
         }
         if (step%120 == 0 && phase == 1)
         {
@@ -61,7 +72,7 @@ public class BoosFight : MonoBehaviour
                     Instantiate(Pepis, Spawners[Random.Range(0, 6)]);
                     break;
                 case 2:
-                    Instantiate(Hands);
+                    Hands.SetActive(true);
                     break;
                 case 3:
                     Instantiate(Punch1);
@@ -81,7 +92,7 @@ public class BoosFight : MonoBehaviour
                     Instantiate(Pepis, Spawners[Random.Range(0, 6)]);
                     break;
                 case 2:
-                    Instantiate(Hands);
+                    Hands.SetActive(true);
                     break;
                 case 3:
                     Instantiate(Punch2);
@@ -101,14 +112,14 @@ public class BoosFight : MonoBehaviour
                     Instantiate(Pepis, Spawners[Random.Range(0, 6)]);
                     break;
                 case 2:
-                    Instantiate(Hands);
+                    Hands.SetActive(true);
                     break;
                 case 3:
                     Instantiate(Punch1);
                     break;
             }
         }
-        if (step%60 == 0 && phase == 3)
+        if (step%60 == 0 && phase == 4)
         {
             int c = Random.Range(0,4);
             switch (c)
@@ -121,12 +132,66 @@ public class BoosFight : MonoBehaviour
                     Instantiate(Pepis, Spawners[Random.Range(0, 6)]);
                     break;
                 case 2:
-                    Instantiate(Hands);
+                    Hands.SetActive(true);
                     break;
                 case 3:
                     Instantiate(Punch2);
                     break;
             }
         }
+        if (step%60 == 0 && phase == 5)
+        {
+            int c = Random.Range(0,4);
+            switch (c)
+            {
+                case 0: 
+                    Instantiate(RightAngels);
+                    Instantiate(LeftAngels);
+                    break;
+                case 1:
+                    Instantiate(Pepis, Spawners[Random.Range(0, 6)]);
+                    break;
+                case 2:
+                    Hands.SetActive(true);
+                    break;
+                case 3:
+                    Instantiate(Punch1);
+                    break;
+            }
+        }
+        if (step%60 == 0 && phase == 6)
+        {
+            int c = Random.Range(0,4);
+            switch (c)
+            {
+                case 0: 
+                    Instantiate(RightAngels);
+                    Instantiate(LeftAngels);
+                    break;
+                case 1:
+                    Instantiate(Pepis, Spawners[Random.Range(0, 6)]);
+                    break;
+                case 2:
+                    Hands.SetActive(true);
+                    break;
+                case 3:
+                    Instantiate(Punch2);
+                    break;
+            }
+        }
+    }
+
+    IEnumerator pauseabit()
+    {
+        pause = true;
+        if (phase == 2) phase = 3;
+        if (phase == 4) phase = 5;
+        if (phase == 6) ;
+        Plat1.SetActive(false);
+        Plat2.SetActive(false);
+        step = 1;
+        yield return new WaitForSeconds(2f);
+        godseye.hit = false;
+        pause = false;
     }
 }

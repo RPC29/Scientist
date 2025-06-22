@@ -16,7 +16,8 @@ public class storystuff : MonoBehaviour
     string[] txts2 = {"I recognize this!", "The coin deflector!", "I created this as a way to escape the cops.", "I'd toss it up and it would create a shield around me", "Imagine the amount of aura I'd gain!", "Unfortunately, I never got caught by cops.", "So I never had an opportunity to use it", "     " };
     string[] txts3 = {"What is this place?", "Wait... is this purgatory?", "A place between heaven and hell, where the souls of the Morally Gray rest.", "That explains all of those humanoid creatures", "     " };
     string[] txts4 = {"Another one of my gadgets!?", "It's The Swap Gun!", "It allows the user the swap places with another person.", "I remember when I was trying it out for the first time.", "A person running away from a dog ran right in front of me when I shot the trigger.", "We swapped places and the dog started chasing me intsead.", "So that dog was a robot this entire time, huh?", "Now that I think about it, I could have used it the other way around.","If a dog was chasing me, I could swap places with someone else, making the dog chase them instead.", "I wonder if I can use it anywhere here...", "     " };
-    string[] txts5 = {"The platform creator!", "This lets the user create a platform above them.", "The idea was to break into people's houses through window.", "But turns out you can only open them from the inside.", "So I modified it to automatically create a platform whenever it sensed a weakness- like an open window with nobody in the house.", "Sadly, it never did.", "I wonder if this could even be useful here", "     " };
+    string[] txts5 = {"The platform creator!", "This lets the user create a platform above them.", "The idea was to break into people's houses through window.", "But turns out you can only open them from the inside.", "So I modified it to automatically create a platform whenever it sensed a weakness- like an open window with nobody in the house.", "Sadly, it never did.", "I wonder if this would even be useful here.","More importantly, I wonder whose hands those are.", "\"Mortal!\"","...?", "\"Thy dared to defy my judgement?\"", "...Your judgement?", "Wait!", "Are you GOD!?", "\"I shall take care of thy myself!\"", "     " };
+    string[] txts6 = { "\"You, Mortal, are but an hassle.\"", "\"I'll let thee enjoy thy stay in hell.\"", "\"For pissing off God is the biggest sin thy could've commited\"", "I... did it!", "          " };
     int i = 0;
     int j = 0;
     string onsc, left;
@@ -91,10 +92,14 @@ public class storystuff : MonoBehaviour
             img.sprite = imgs[3];
             if (i > 9) SceneManager.LoadScene(2);
         }
-        if (GameManager.checkpoint == 4)
+        if (GameManager.checkpoint == 6)
         {
             img.sprite = imgs[3];
-            if (i > 6) SceneManager.LoadScene(2);
+            if (i > 13) SceneManager.LoadScene(5);
+        }
+        if (GameManager.checkpoint == 7)
+        {
+            img.sprite = imgs[3];
         }
         angelcol = Mathf.Clamp01(angelcol);
         angel.color = new Color(1, 1, 1, angelcol);
