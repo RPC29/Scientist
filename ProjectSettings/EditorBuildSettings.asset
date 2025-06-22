@@ -6,9 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Load.unity
-    guid: 98926def8d70f6f4da18d0e908e07b55
+    path: Assets/Scenes/Start.unity
+    guid: 686ebc05c644451479e60d2ba4b51249
   - enabled: 1
     path: Assets/Scenes/Heaven.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Purgatory.unity
+    guid: 1bc5cd34cf3f71a46adbc568b552d865
+  - enabled: 1
+    path: Assets/Scenes/Story.unity
+    guid: 4a3f50f2402340a448f9107bd9346d45
+  - enabled: 1
+    path: Assets/Scenes/Load.unity
+    guid: 98926def8d70f6f4da18d0e908e07b55
+  - enabled: 1
+    path: Assets/Scenes/Hell.unity
+    guid: 046a1e43c97e3d9438434d9aec81db02
   m_configObjects: {}

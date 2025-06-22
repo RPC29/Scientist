@@ -14,6 +14,8 @@ public class Angel : MonoBehaviour
     public int desync;
     public bool despawned;
 
+    public bool boss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class Angel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        angel.transform.position = new Vector2(angel.transform.position.x, setpos + 0.1f * Mathf.Sin(Time.time * 2));
+        if (!boss) angel.transform.position = new Vector2(angel.transform.position.x, setpos + 0.1f * Mathf.Sin(Time.time * 2));
         if (Time.timeScale == 0) despawned = false;
 
         if (arrowtimer % 60 < 40) angelsp.sprite = angelsprites[2];

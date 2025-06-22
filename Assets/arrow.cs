@@ -8,11 +8,12 @@ public class arrow : MonoBehaviour
     bool dead;
     public bool deflected;
     float speed = 0.1f;
+    public AudioSource deflectsfx;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(GameManager.checkpoint < 4) if (!col.IsTouchingLayers(LayerMask.GetMask("camera"))) Destroy(this.gameObject);
     }
 
     // Update is called once per frame
@@ -48,6 +49,7 @@ public class arrow : MonoBehaviour
 
         if (deflected)
         {
+            deflectsfx.Play();
             if (collision.gameObject.layer == 8)
             {
                 collision.gameObject.GetComponent<Angel>().despawned = true;

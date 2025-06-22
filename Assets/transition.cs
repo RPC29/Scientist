@@ -49,7 +49,6 @@ public class transition : MonoBehaviour
             yield return new WaitForSecondsRealtime(1f/60f);
             Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, new Vector3(camx, camy, -10), 10/60f);
         }
-        Debug.Log("Movement done");
         if (hassemi)
         {
             semisolid.SetActive(true);
